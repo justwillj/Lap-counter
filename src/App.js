@@ -5,12 +5,24 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const decrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+    if (count === 0) {
+      setCount(0);
+    }
+  };
+
+  const resetCount = () => setCount(0);
+
   return (
     <div className="main">
       <h1>Number of laps: {count} </h1>
-      <button onClick={() => setCount(count - 1)}>-</button>
+      <button onClick={() => setCount(decrease)}>-</button>
       <button onClick={() => setCount(count + 1)}>+</button>
-      <button>Reset</button>
+      <button onClick={() => setCount(resetCount)}>Reset</button>
     </div>
   );
 }
