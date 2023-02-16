@@ -1,3 +1,8 @@
+# CODE REVIEW 
+You should always be updating the Readme file and removing all of the generic React stuff. Make sure the Readme is related to what you are working on, and includes any necessary information. IE: scripts that should be run to get the app installed, running, tested, etc. 
+
+Everything underneath this section should be removed.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

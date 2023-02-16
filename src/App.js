@@ -10,6 +10,7 @@ function App() {
     if (count > 0) {
       setCount(count - 1);
     }
+    /*CODE REVIEW: this is redundant. */
     if (count === 0) {
       setCount(0);
     }
@@ -20,9 +21,13 @@ function App() {
   return (
     <div className="main">
       <h1>Number of laps: {count} </h1>
-      <button onClick={() => setCount(decrease)}>-</button>
+        {/* CODE REVIEW: since you are using setCount in the decrease function, you don't need to 
+        call it here. */}
+      <button onClick={decrease}>-</button>
+        {/* CODE REVIEW: It is not best practice to mutate state in the JSX. Instead we want to 
+        have named callback functions like you do with your decrement function */}
       <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(resetCount)}>Reset</button>
+      <button onClick={resetCount}>Reset</button>
     </div>
   );
 }
